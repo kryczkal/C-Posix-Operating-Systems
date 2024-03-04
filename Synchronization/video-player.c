@@ -16,7 +16,7 @@
 #define mili_to_micro 1000
 #define ms_in_s 0.001
 #define s_to_us 1000000
-// TODO in stage 3
+
 typedef struct timespec timespec_t;
 typedef struct circular_buffer
 {

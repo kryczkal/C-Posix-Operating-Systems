@@ -1,4 +1,4 @@
-/Fifo-and-Pipes/cmake-build-debug/
+*cmake-build-debug/
 /.idea/.name
 /.idea/C-Posix-Operating-Systems.iml
 /.idea/editor.xml
@@ -7,3 +7,4 @@
 /.idea/modules.xml
 /.vscode/settings.json
 /.idea/vcs.xml
+/Fifo-and-Pipes/Fifo-Client-Server/cmake-build-debug/

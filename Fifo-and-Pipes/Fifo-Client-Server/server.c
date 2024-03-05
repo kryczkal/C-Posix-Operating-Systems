@@ -1,6 +1,31 @@
 //
 // Created by wookie on 3/5/24.
 //
+
+/*
+This is a simple server program written in C for inter-process communication
+using FIFOs (named pipes).
+
+The 'read_from_fifo' function reads data from the FIFO. It reads the data into
+a buffer and prints the sender's PID and the message received. It continues
+reading until there is no more data to read.
+
+The 'main' function is the entry point of the program. It checks the
+command-line arguments, creates a FIFO with the specified name (if it doesn't
+already exist), opens the FIFO for reading, and calls 'read_from_fifo' to read
+the data. After reading the data, it closes the FIFO and exits the program.
+
+The ERR macro is defined to handle errors. It prints the error message, the
+file name, and the line number where the error occurred, then exits the program.
+
+The 'usage' function is used to display the correct usage of the program if the
+user provides incorrect arguments.
+
+The program expects one command-line argument: the name of the FIFO file. If
+the user does not provide this argument, the program displays the correct usage
+and exits.
+*/
+
 #include "server.h"
 
 #include <ctype.h>

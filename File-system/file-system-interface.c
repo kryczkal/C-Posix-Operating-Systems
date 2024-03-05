@@ -136,6 +136,7 @@ void readFile(char* path){
     ssize_t charsRead;
 
     while((charsRead = read(fd, Buffer, FILE_BUFF)) > 0){
+        // write to stdout
         if (write(1, Buffer, charsRead) < 0){
             ERR("cant write to file");
         }

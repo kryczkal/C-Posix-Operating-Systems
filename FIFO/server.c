@@ -1,6 +1,7 @@
 //
 // Created by wookie on 3/5/24.
 //
+#include "server.h"
 
 #include <ctype.h>
 #include <errno.h>
@@ -8,10 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
-#include <sys/types.h>
 #include <unistd.h>
-
-#include "server.h"
 
 #define ERR(source) (perror(source), fprintf(stderr, "%s:%d\n", __FILE__, __LINE__), exit(EXIT_FAILURE))
 

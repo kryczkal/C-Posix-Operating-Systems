@@ -29,6 +29,9 @@ Each folder consists of bigger, named programs, and smaller programs with "prog[
 ### Thread Management and Signals
 - Encompasses threading models, highlighting advanced thread management, signal handling, and inter-thread communication.
 - [`student-simulation.c`](Threads-and-signals/student-simulation.c): A comprehensive simulation of student activities using advanced thread management and signal handling techniques for a robust, error-free operation.
+### Fifo and Pipes
+- Contains programs that demonstrate inter-process communication using FIFOs and pipes.
+- [`client.c`](Fifo-and-Pipes/Fifo-Client-Server/client.c) & [`server.c`](Fifo-and-Pipes/Fifo-Client-Server/server.c): These programs demonstrate inter-process communication using FIFOs (named pipes). The `client.c` program reads data from a file and sends it to a FIFO, with the process PID added at the front of each message. The `server.c` program reads data from the FIFO and prints the sender's PID and the message received. Multiple clients can send messages to the server, and the server will print the sender's PID and the message received.
 
 ## Conclusion
 This portfolio is designed to demonstrate my backend development expertise and problem-solving capabilities. Each mini-project contained herein is an example of my commitment to high-quality, maintainable, and efficient software design. I am eager to bring these skills to a dynamic team and contribute to impactful projects.

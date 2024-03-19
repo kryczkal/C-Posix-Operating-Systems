@@ -37,7 +37,6 @@ void sethandler(void (*f)(int, siginfo_t *, void *), int sigNo) {
     if(-1 == sigaction(sigNo, &sa, NULL)) ERR("sigaction");
 }
 
-// #TODO
 void sigchld_handler(int sig, siginfo_t *info, void *ucontext) {
     MAYBE_UNUSED(info);
     MAYBE_UNUSED(sig);
@@ -62,6 +61,7 @@ void mq_handler(int sig, siginfo_t *info, void *ucontext) {
     u_int32_t msg_prio;
     pin = (mqd_t*)info->si_value.sival_ptr;
 
+    // set notification for the same process again (it's one-time only)
     static struct sigevent not;
     not.sigev_notify = SIGEV_SIGNAL;
     not.sigev_signo = SIGRTMIN;

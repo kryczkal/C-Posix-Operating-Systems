@@ -38,8 +38,8 @@ The repository is organized into directories based on the skill or ability demon
 ### Posix Message Queues
 - Contains programs that demonstrate inter-process communication using POSIX message queues.
 - [`bingo-simulation.c`](Posix-message-queues/Bingo-simulation/bingo-simulation.c): A simulation of a bingo game using POSIX message queues. The game involves multiple child processes (players) communicating their moves to a parent process (game controller) through message queues.
-- [`server.c`](server.c) & [`client.c`](client.c): The `server.c` program performs operations based on the requests received from the `client.c` program. The server and client communicate using message queues named after the server's operation and the client's PID.
-- [`uber-driver-simulation.c`](uber-driver-simulation.c): A simulation of a car transportation system. The simulation involves multiple driver processes receiving tasks from a main process and reporting back the results of the tasks.
+- [`server.c`](Posix-message-queues/Client-Server/server.c) & [`client.c`](Posix-message-queues/Client-Server/client.c): The `server.c` program performs operations based on the requests received from the `client.c` program. The server and client communicate using message queues named after the server's operation and the client's PID.
+- [`uber-driver-simulation.c`](Posix-message-queues/Uber-drivers-simulation/uber-driver-simulation.c): A simulation of a car transportation system. The simulation involves multiple driver processes receiving tasks from a main process and reporting back the results of the tasks.
 
 ## Conclusion
 This portfolio is designed to demonstrate my backend development expertise and problem-solving capabilities. Each mini-project contained herein is an example of my commitment to high-quality, maintainable, and efficient software design. I am eager to bring these skills to a dynamic team and contribute to impactful projects.

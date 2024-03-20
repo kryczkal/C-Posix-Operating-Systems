@@ -1,6 +1,35 @@
 //
 // Created by wookie on 3/19/24.
 //
+
+/*
+ * This program consists of two parts: a client and a server, which communicate
+ * using POSIX message queues.
+ *
+ * The server waits for the following data from any queue: the client's PID and
+ * two integers. It then calculates the result - the sum for the PID_s queue,
+ * the quotient for the PID_d queue, and the remainder of the division for the
+ * PID_m queue. The result is written to the client's queue (see the client's
+ * description below). Upon receiving the SIGINT signal, the server removes its
+ * queues and terminates.
+ *
+ * The server creates its queues and prints their names. After a second, it
+ * removes them and terminates. The client creates its queue, waits for 1
+ * second, removes it, and terminates.
+ *
+ * The server reads the first message from the PID_s queue, then sends a
+ * response to the client. At this stage, the program ignores all errors. The
+ * client reads 2 numbers from the standard input and sends a message to the
+ * server. It waits for a response and prints it.
+ *
+ * The server handles all queues. It terminates after receiving SIGINT. The
+ * client sends its messages until EOF is read or the response waiting time is
+ * exceeded.
+ *
+ * The queues are removed when the programs are closed. Full error handling is
+ * implemented.
+ */
+
 #include <unistd.h>
 #include <stdlib.h>
 #include <mqueue.h>

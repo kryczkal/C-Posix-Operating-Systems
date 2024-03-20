@@ -2,6 +2,25 @@
 // Created by wookie on 3/19/24.
 //
 
+/*
+ * This program consists of two parts: a client and a server, which communicate
+ * using POSIX message queues.
+ *
+ * The client program is called with one parameter - the name of the server's
+ * queue (one of the three). The client creates its own queue named after its
+ * PID. Then, until EOF is read, it reads lines containing two numbers from the
+ * standard input. After reading a line, the client sends a message consisting
+ * of its PID number and the two read numbers to the server's queue and waits
+ * for a response in its queue. After receiving a response, it prints it. If it
+ * does not receive a response within 100ms, it terminates. Upon termination,
+ * the program removes its queue.
+ * The server creates three named message queues: PID_s, PID_d, and PID_m, where
+ * PID is the process identifier. It then prints the names of the created queues.
+ *
+ * The queues are removed when the programs are closed. Full error handling is
+ * implemented.
+ */
+
 #include <unistd.h>
 #include <stdlib.h>
 #include <mqueue.h>
@@ -82,22 +101,20 @@ int main(int argc, char** argv) {
         );
 
         // Receive the summation result from the server
-        clock_t start_time = clock();
-        while(1) {
+        struct timespec ts;
+        int res;
+        ts.tv_sec = TIMEOUT_MS / 1000;
+        ts.tv_nsec = (TIMEOUT_MS % 1000) * 1000000;
+        do {
             if (mq_receive(mq_c, buffer, sizeof(int64_t), NULL) == sizeof(int64_t)) {
                 printf("Client received operation result: %ld\n", *((int64_t*)buffer));
                 break;
             }
             else if (errno != EAGAIN) ERR("mq_receive");
 
-            clock_t current_time = clock();
-            // TODO - Make the timeout work
-            if (0) {
-                printf("Client timed out waiting for operation result\n");
-                run = 0;
-                break;
-            }
-        }
+            res = nanosleep(&ts, &ts);
+        } while(res == -1 && erno == EINTR);
+        if(res == -1) printf("Client timed out\n");
     }
 
     // Cleanup

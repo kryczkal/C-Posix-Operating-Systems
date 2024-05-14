@@ -6,12 +6,9 @@ The repository is organized into directories based on the skill or ability demon
 
 ## Skills and Abilities
 
-### File System Management
-- Contains programs that demonstrate file management, directory operations, and file system interfaces.
-- [`file-system-interface.c`](File-system/file-system-interface.c)
+### Sockets
+- [`Calc-Server`](Sockets/Calculator-Network-Client-Server) An online calculator using tcp sockets and local sockets with the coresponding clients
 
-### POSIX Execution Environment
-- Features programs which simulate scheduling and execution in a POSIX environment, among other utilities that exhibit process control and environment management.
 
 ### Process, Signals, and Descriptors
 - [`classroom-scenario.c`](Processes-signals-and-descriptors/classroom-scenario.c): Simulates classroom scheduling
@@ -32,11 +29,23 @@ The repository is organized into directories based on the skill or ability demon
 - Contains programs that demonstrate inter-process communication using FIFOs and pipes.
 - [`client.c`](Fifo-and-Pipes/Fifo-Client-Server/client.c) & [`server.c`](Fifo-and-Pipes/Fifo-Client-Server/server.c)
 - [`pipe-prog1.c`](Fifo-and-Pipes/Pipe-Prog1/pipe-prog1.c)
+
 ### Posix Message Queues
 - Contains programs that demonstrate inter-process communication using POSIX message queues.
 - [`bingo-simulation.c`](Posix-message-queues/Bingo-simulation/bingo-simulation.c): A simulation of a bingo game
 - [`server.c`](Posix-message-queues/Client-Server/server.c) & [`client.c`](Posix-message-queues/Client-Server/client.c)
 - [`uber-driver-simulation.c`](Posix-message-queues/Uber-drivers-simulation/uber-driver-simulation.c): A simulation of a car transportation system
+
+### Shared Memory
+- [`robbery-simulation-server.c`](Shared-Memory/Client-Server-Shared-Memory/server.c) & [`robbery-simulation-client.c`](Shared-Memory/Client-Server-Shared-Memory/client.c) - A simulation of concurrent robbers robbing a dungeon using shared memory with mmap
+- [`monte-carlo-pi.c`](Shared-Memory/Monte-Carlo-Pi/monte-carlo-pi.c) - Computing pi using many threads with shared memory using mmap
+
+### File System Management
+- Contains programs that demonstrate file management, directory operations, and file system interfaces.
+- [`file-system-interface.c`](File-system/file-system-interface.c)
+
+### POSIX Execution Environment
+- Features programs which simulate scheduling and execution in a POSIX environment, among other utilities that exhibit process control and environment management.
 
 ## Conclusion
 This portfolio is designed to demonstrate my backend development expertise and problem-solving capabilities. Each mini-project contained herein is an example of my commitment to high-quality, maintainable, and efficient software design. I am eager to bring these skills to a dynamic team and contribute to impactful projects.

@@ -1,8 +1,12 @@
 /*
- * This program demonstrates complex inter-process communication (IPC) and signal handling in C.
- * It creates multiple child processes, each performing a specific job based on signal reception, and a parent process that coordinates and controls these child processes through signals.
+ * This progrma creates multiple child processes, each performing a specific job based on signal reception, and a
+ * parent process that coordinates and controls these child processes through signals.
  * 
- * The main process takes four command-line arguments: n (number of child processes), k (seconds before sending SIGUSR1), p (seconds before sending SIGUSR2), and r (number of repetitions for child processes).
+ * The main process takes four command-line arguments:
+ * n (number of child processes),
+ * k (seconds before sending SIGUSR1),
+ * p (seconds before sending SIGUSR2),
+ * r (number of repetitions for child processes).
  * 
  * Each child process:
  * - Is configured to handle SIGUSR1 and SIGUSR2 signals.
@@ -15,9 +19,6 @@
  * - Periodically sends SIGUSR1 and SIGUSR2 to all child processes, alternating between the two signals based on the specified intervals (k and p).
  * - Waits for all child processes to terminate before exiting.
  * 
- * Error handling is performed throughout, with a custom ERR macro to handle failures by printing the error location and terminating the program.
- * 
- * This program exemplifies advanced usage of signals for process synchronization and communication, including custom signal handlers, periodic tasks using alarm and sleep, and process management with fork and wait.
  */
 
 #include <stdlib.h>

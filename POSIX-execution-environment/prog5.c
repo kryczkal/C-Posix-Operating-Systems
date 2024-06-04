@@ -9,7 +9,6 @@
  * If the '-n' option is provided, the program prints the specified string, repeated according to the multiplier value.
  * 
  * The program expects that each option will have a corresponding argument and checks for the presence of additional non-option arguments after all options are processed.
- * If unexpected arguments are found or if there's an issue with option processing, the program exits with `EXIT_FAILURE`.
  */
 
 #include <unistd.h>

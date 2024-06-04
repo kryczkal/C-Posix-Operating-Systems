@@ -1,15 +1,11 @@
 /*
- * This program demonstrates file operations, signal handling, and process management in C. 
- * It is designed to write a specified number of blocks of random data, each of a specified size, to a file. 
+ * This program writes a specified number of blocks of random data, each of a specified size, to a file.
  * The program takes four command-line arguments: a delay in nanoseconds for child processes to sleep, the number of blocks to write, the size of each block in megabytes, and the output file name.
  *
  * Key functionalities include:
- * - Setting up a signal handler for SIGUSR1 to increment a counter each time the signal is received, illustrating basic signal handling and inter-process communication.
- * - Creating a child process that periodically sends SIGUSR1 to the parent process, using nanosleep for delays, showcasing process creation and time-based actions.
- * - The parent process performs bulk reads from /dev/urandom and bulk writes to the specified file, demonstrating efficient I/O operations with error handling.
- * - Error handling is implemented throughout the program, with a custom macro for printing errors and terminating the program, ensuring robustness.
- *
- * This program exemplifies advanced C programming techniques, including working with file descriptors, signals, dynamic memory allocation, and process control.
+ * - Setting up a signal handler for SIGUSR1 to increment a counter each time the signal is received.
+ * - Creating a child process that periodically sends SIGUSR1 to the parent process.
+ * - The parent process performs bulk reads from /dev/urandom and bulk writes to the specified file.
  */
 
 #define _GNU_SOURCE

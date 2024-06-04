@@ -1,7 +1,6 @@
 /*
  * This header file for a toy factory simulation provides the necessary declarations and utility functions 
- * for the simulation's operation. It includes standard and POSIX-specific headers for threading, semaphores, 
- * and other system functions. 
+ * for the simulation's operation.
  *
  * The file defines a macro for handling temporary failures due to interrupts, a standard error reporting macro, 
  * and a utility function for inducing random sleep intervals to simulate real-world operation delays. The core 
@@ -9,8 +8,7 @@
  * stages of production: ordered, assembled, wrapped, and delivered. 
  *
  * Functions are provided to simulate each step in a toy's lifecycle, from order placement to delivery, including 
- * state transitions and simulated work through sleep delays. Each function outputs to the standard output to 
- * provide a trace of the simulation's progress, aiding in understanding and debugging the factory's workflow. 
+ * state transitions and simulated work through sleep delays.
  */
 
 #define _POSIX_C_SOURCE 200809L

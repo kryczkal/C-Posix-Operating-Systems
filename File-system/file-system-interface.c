@@ -5,16 +5,6 @@
  *   - B: Show the content of a file or list the contents of a directory. It handles files by displaying their content and directories by listing their contents.
  *   - C: Walk a directory recursively. It lists all files and directories within the specified directory, including subdirectories, using indentation to indicate depth.
  *   - D: Exit the program.
- * 
- * The program uses several key concepts and functions, including:
- *   - Reading and validating user input with basic error checking.
- *   - Dynamically allocating memory for strings and handling file and directory paths.
- *   - Using system calls and library functions for file operations (open, read, write, fclose) and directory operations (opendir, readdir, closedir).
- *   - Recursively walking directory trees with the nftw function, showcasing how to navigate directories and subdirectories in C.
- * 
- * Error handling is a critical part of the program, using a custom ERR macro to report errors and exit if necessary. It also includes functionality to clean up resources properly (e.g., closing files and directories).
- * 
- * This program illustrates practical file and directory manipulation techniques in C, suitable for educational purposes or as a base for more complex file system utilities.
  */
 
 #define _XOPEN_SOURCE 700

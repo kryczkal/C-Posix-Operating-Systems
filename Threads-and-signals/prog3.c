@@ -1,14 +1,15 @@
 /*
- * This program exemplifies the use of signals for process synchronization, signal blocking and unblocking, and handling zombie processes using a SIGCHLD handler and waitpid in a loop.
- * It requires two command-line arguments: M (milliseconds) and N (number of cycles before sending SIGUSR2), to control the child process's behavior.
- * 
- * The main process sets up signal handlers for SIGUSR1, SIGUSR2, and SIGCHLD using the setHandler function. It then creates a child process using fork.
- * The child process, upon creation, enters a loop where it sends SIGUSR1 signals to the parent process at intervals specified by the M argument. After N cycles, it sends a SIGUSR2 signal.
- * The parent process waits for signals, specifically SIGUSR2, using sigsuspend, which pauses the process until a signal is received. Upon receiving SIGUSR2, it prints a message including the total count of SIGUSR2 signals received.
- * 
- * Signal handling setup involves blocking SIGUSR1 and SIGUSR2 signals during initialization to prevent handling before the program is ready. The original signal mask is restored before entering the main loop.
- * 
- * The child process's behavior demonstrates timed, repetitive signaling to its parent, while the parent process showcases responsive signal handling and counting of specific signal occurrences.
+ * This program requires two command-line arguments: M (milliseconds) and N (number of cycles before sending SIGUSR2), to control the child process's behavior.
+ *
+ * The main process sets up signal handlers for SIGUSR1, SIGUSR2, and SIGCHLD using the setHandler function.
+ * It then creates a child process using fork.
+ * The child process, upon creation, enters a loop where it sends SIGUSR1 signals to the parent process at intervals
+ * specified by the M argument. After N cycles, it sends a SIGUSR2 signal.
+ * The parent process waits for signals, specifically SIGUSR2, using sigsuspend, which pauses the process until a signal
+ * is received. Upon receiving SIGUSR2, it prints a message including the total count of SIGUSR2 signals received.
+ *
+ * Signal handling setup involves blocking SIGUSR1 and SIGUSR2 signals during initialization to prevent handling before
+ * the program is ready. The original signal mask is restored before entering the main loop.
  */
 
 #include <stdio.h>

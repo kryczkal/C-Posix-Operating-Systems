@@ -1,14 +1,11 @@
 ## Introduction
-This repository is a curated collection of my work showcasing a range of skills from file system interfaces to multi-threaded simulations. Each program is a testament to my ability to design, implement, and manage complex systems using C and POSIX standards.
+This repository is a collection of programs showcasing my ability to design and implement programs in C using POSIX standards.
+It focuses on the knowledge of operating systems and concurrent programming, including the use of sockets, processes, signals, descriptors, synchronization techniques, thread management, and inter-process communication.
 
-### File Structure
-The repository is organized into directories based on the skill or ability demonstrated by the contained programs. Each program contains has a big comment in its file that provides an overview of its functionalities.
-
-## Skills and Abilities
+## Subjects
 
 ### Sockets
-- [`Calc-Server`](Sockets/Calculator-Network-Client-Server) An online calculator using tcp sockets and local sockets with the coresponding clients
-
+- [`Calc-Server`](Sockets/Calculator-Network-Client-Server) An online calculator using tcp sockets and local sockets with the corresponding clients
 
 ### Process, Signals, and Descriptors
 - [`classroom-scenario.c`](Processes-signals-and-descriptors/classroom-scenario.c): Simulates classroom scheduling
@@ -46,6 +43,3 @@ The repository is organized into directories based on the skill or ability demon
 
 ### POSIX Execution Environment
 - Features programs which simulate scheduling and execution in a POSIX environment, among other utilities that exhibit process control and environment management.
-
-## Conclusion
-This portfolio is designed to demonstrate my backend development expertise and problem-solving capabilities. Each mini-project contained herein is an example of my commitment to high-quality, maintainable, and efficient software design. I am eager to bring these skills to a dynamic team and contribute to impactful projects.

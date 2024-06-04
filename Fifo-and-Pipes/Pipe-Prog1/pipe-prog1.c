@@ -3,10 +3,8 @@
 //
 
 /*
-This program is a multi-process application written in C that demonstrates
-inter-process communication using pipes. It creates a specified number of
-child processes and establishes a communication channel with each of them
-using pipes.
+This program creates a specified number of child processes and establishes
+a communication channel with each of them using pipes.
 
 The parent process waits for a SIGINT signal (usually triggered by Ctrl+C).
 Upon receiving the signal, it selects a random child process and sends a
@@ -37,11 +35,6 @@ program ignores this signal to prevent it from terminating the parent process.
 The program takes one command-line argument, which is the number of child
 processes to create. It checks the validity of this argument and displays a
 usage message if it's not valid.
-
-The program uses dynamic memory allocation to store the data about the child
-processes. It allocates an array of structures, each containing the process ID
-and the file descriptor of the write end of the pipe to a child process. The
-program frees this memory before it terminates.
 */
 
 #define _GNU_SOURCE

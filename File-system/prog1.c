@@ -1,6 +1,4 @@
 /*
- * This program demonstrates how to scan directories in C using POSIX API functions. It can operate on the current directory or any directories specified as command-line arguments.
- * 
  * The program first saves the current working directory, then changes to each directory provided as an argument (if any) using chdir, scans it, and finally returns to the original directory.
  * 
  * Scanning involves opening the directory with opendir, reading each entry with readdir, and using lstat to obtain information about each entry. Based on this information, the program counts files, directories, symbolic links, and other types of entries.
@@ -8,10 +6,6 @@
  * It uses two scanning implementations: 
  *   - _scanDirPosix(), which is a POSIX-compliant method that uses lstat to determine the type of each directory entry. 
  *   - _scanDirArch(), an architecture-specific method intended to demonstrate how directory entries might be directly classified using dirent's d_type field (not used in the final scanDir function due to its reliance on features that may not be supported on all filesystems).
- * 
- * Error handling is done through a macro ERR that prints the error message and exits the program. This ensures the program exits gracefully if it encounters an error while accessing a directory or processing its contents.
- * 
- * Note: The program defaults to using the POSIX implementation for scanning directories, as indicated by the scanDir function.
  */
 
 #include <stdio.h>

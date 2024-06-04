@@ -1,18 +1,3 @@
-/*
- * This program demonstrates advanced IPC (Inter-Process Communication) mechanisms in C, including signal handling, process creation, and file operations.
- * It takes four command-line arguments: N (number of nanoseconds to sleep in the child process), blocks (number of blocks to write), blockSize (size of each block in MB), and fileName (name of the output file).
- * 
- * The main process spawns a child process that repeatedly sends SIGUSR1 signals to the parent, based on a sleep interval defined by the first argument.
- * The parent process handles these signals by incrementing a global counter, demonstrating signal-based communication between processes.
- * 
- * Additionally, the parent process performs file I/O operations by writing random data to a specified file. The amount of data written is determined by the 'blocks' and 'blockSize' arguments.
- * It reads data from /dev/urandom and writes it to the output file, demonstrating bulk read/write operations with error handling.
- * 
- * The program makes extensive use of system calls (fork, kill, sigaction, open, read, write, close) and checks for errors at each step, using a custom ERR macro for error reporting.
- * It demonstrates handling of UNIX signals, process control, file I/O operations, dynamic memory allocation, and the use of /dev/urandom for generating random data.
- * 
- * This is an example of a more complex C program that combines various system programming concepts to achieve its goals.
- */
 
 #define _GNU_SOURCE
 

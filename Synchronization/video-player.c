@@ -1,11 +1,17 @@
 /*
- * This C program demonstrates a multi-threaded video player using pthreads for concurrent execution of decoding, transforming, and displaying video frames. It is structured around the use of circular buffers for managing frames at different stages of the playback process: decoding, transforming (e.g., filtering or resizing), and displaying.
+ * This C program demonstrates a multi-threaded video player using pthreads for concurrent execution of decoding
+ * , transforming, and displaying video frames. It is structured around the use of circular buffers for managing frames
+ * at different stages of the playback process: decoding, transforming (e.g., filtering or resizing), and displaying.
  *
- * The circular_buffer structure is key to this program, designed to hold video frames with operations to push and pop frames in a thread-safe manner, ensuring synchronization between producer (decoder, transformer) and consumer (display) threads. Each buffer is protected by a mutex to prevent concurrent access issues.
+ * The circular_buffer structure is key to this program, designed to hold video frames with operations to push and pop
+ * frames in a thread-safe manner, ensuring synchronization between producer (decoder, transformer) and consumer
+ * (display) threads. Each buffer is protected by a mutex to prevent concurrent access issues.
  *
- * The decode_job function represents a thread's work to decode video frames and push them into the decoding buffer. The transform_job function takes decoded frames, applies transformations, and pushes them into the transformation buffer. The display_job function then takes transformed frames for display, ensuring a frame rate consistent with real-time playback by controlling the pace of frame popping based on a calculated sleep interval.
+ * The decode_job function represents a thread's work to decode video frames and push them into the decoding buffer.
+ * The transform_job function takes decoded frames, applies transformations, and pushes them into the transformation buffer.
+ * The display_job function then takes transformed frames for display, ensuring a frame rate consistent with real-time
+ * playback by controlling the pace of frame popping based on a calculated sleep interval.
  *
- * This program illustrates advanced concurrency concepts, such as mutexes for critical section protection, condition variables or busy-waiting loops for synchronization, and dynamic memory management for handling video frames. It's an example of a producer-consumer problem, where decoded frames are produced by decode_job, consumed then produced by transform_job, and finally consumed by display_job, showcasing efficient inter-thread communication and synchronization with practical applications in multimedia processing.
  */
 
 

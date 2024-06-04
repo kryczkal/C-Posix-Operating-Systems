@@ -13,8 +13,6 @@
  * 
  * Error handling is implemented throughout the program. It uses a custom macro ERR to print error messages and exit in case of failure. 
  * Before creating the file, it attempts to unlink any existing file with the same name to ensure that the new file can be created without issues.
- * 
- * Usage instructions are provided through the Usage function, which is called if the user provides incorrect arguments or requests help.
  */
 
 #include <stdio.h>

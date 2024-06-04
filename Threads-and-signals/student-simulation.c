@@ -1,16 +1,5 @@
-/* This C program simulates a scenario where students progress through their academic years at a university, 
- * with the ability to dynamically join and leave the simulation. The main concepts demonstrated include:
- *
- * - Dynamic thread creation and management: Threads represent students, each performing actions (e.g., advancing through years) concurrently.
- * - Mutexes for synchronization: Protects access to shared resources (year counters) to ensure consistent updates.
- * - Thread cancellation: Simulates students leaving the university by randomly canceling threads during the simulation.
- * - Memory management: Dynamically allocates and frees memory for student threads and their status indicators.
- * - Signal handling and thread cancellation cleanup: Ensures resources are correctly cleaned up even when threads are abruptly canceled.
- * - Usage of POSIX time functions for simulating passage of time and thread sleep.
- * - Command-line argument processing to customize the simulation parameters (e.g., number of students).
- *
- * The program operates in a loop for a defined duration (SIMULATION_TIME_MS), periodically removing students at random and 
- * adjusting the active student count. It concludes by joining all threads to ensure the program cleanly exits, summarizing 
+/* The program operates in a loop for a defined duration (SIMULATION_TIME_MS), periodically removing students at random and
+ * adjusting the active student count. It concludes by joining all threads to ensure the program cleanly exits, summarizing
  * the final distribution of students across the years.
  */
 

@@ -1,18 +1,8 @@
 /* This C program simulates a dice game with multiple players (threads), each rolling a die in rounds. 
  * Each player rolls a die and the player(s) with the highest roll in each round receive a point. 
  * The game continues for a predefined number of rounds, and at the end, the points are tallied to determine the winner(s).
- *
- * Key concepts demonstrated:
- * - Thread creation and management: Uses pthreads to simulate individual players participating in the game concurrently.
- * - Synchronization: Utilizes a pthread_barrier to synchronize all player threads at two critical points in each round:
- *   1) After all players have rolled their dice but before points are awarded.
- *   2) After points for the round have been awarded, ensuring that all threads proceed to the next round simultaneously.
- * - Randomness: Employs rand_r() with a thread-specific seed for thread-safe random number generation, ensuring that each player's die roll is independent.
- * - Resource sharing: Shows how multiple threads can safely read and write to shared memory (rolls and points arrays) with proper synchronization mechanisms in place.
- * - Cleanup: Demonstrates proper resource cleanup by destroying the pthread_barrier after use and joining all threads to ensure that the program exits cleanly.
- *
- * The program is structured to initialize the game environment, start all player threads, wait for all threads to complete, and then print the final scores.
  */
+
 #include <pthread.h>
 #include <stdlib.h>
 #include <stdio.h>

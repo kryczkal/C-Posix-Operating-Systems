@@ -1,19 +1,7 @@
-/* This C program simulates a card game with a variable number of players, demonstrating:
- * - Thread creation and management: Uses pthreads to represent players participating in the game.
- * - Synchronization mechanisms: Employs mutexes, condition variables, and barriers to synchronize actions among threads, 
- *   ensuring orderly gameplay and handling of game events (e.g., player joining, card exchange).
- * - Signal handling: Utilizes signals (SIGUSR1 to add a player, SIGINT to terminate the game) to interact with the game 
- *   dynamically, showcasing how external events can control thread behavior.
- * - Randomization: Shuffles the deck and determines the gameplay flow, such as which cards are exchanged, to mimic the 
- *   unpredictability of a real card game.
- * - Resource cleanup: Carefully cleans up resources (threads, mutexes, condition variables, and barriers) upon game completion 
- *   or interruption, demonstrating proper resource management in a multithreaded environment.
- * - Game logic implementation: Incorporates game-specific logic, such as checking for winning conditions (all cards of the same 
- *   suit) and managing the deck and hands of cards.
- *
- * Players (threads) each receive a hand of cards and participate in rounds of the game where they may exchange a card with 
+/* This C program simulates a card game with a variable number of players
+ * Players (threads) each receive a hand of cards and participate in rounds of the game where they may exchange a card with
  * the next player. The game continues until a player wins by collecting a hand of the same suit or the game is interrupted 
- * using SIGINT. This program illustrates complex thread interaction and synchronization in a simulated environment.
+ * using SIGINT.
  */
 
 

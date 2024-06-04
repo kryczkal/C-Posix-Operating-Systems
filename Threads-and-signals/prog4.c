@@ -1,20 +1,15 @@
 /*
- * This program demonstrates advanced inter-process communication (IPC) with signal handling and file I/O operations in C.
- * It accepts four command-line arguments: N (nanoseconds for child process sleep interval), blocks (number of data blocks to write), blockSize (size of each data block in MB), and fileName (output file name).
+ * This pogram accepts four command-line arguments: N (nanoseconds for child process sleep interval), blocks
+ * (number of data blocks to write), blockSize (size of each data block in MB), and fileName (output file name).
  *
- * The main process spawns a child process that enters an infinite loop, sleeping for a specified interval (N nanoseconds) before sending a SIGUSR1 signal to its parent.
- * Each time the parent receives a SIGUSR1 signal, it increments a global counter, demonstrating signal-based communication between the child and parent processes.
+ * The main process spawns a child process that enters an infinite loop, sleeping for a specified interval (N nanoseconds)
+ * before sending a SIGUSR1 signal to its parent.
+ * Each time the parent receives a SIGUSR1 signal, it increments a global counter.
  *
- * Meanwhile, the parent process performs file I/O operations, writing random data to the specified output file. This demonstrates managing bulk data transfer, error handling, and resource management (opening, reading, writing, closing files, and memory allocation).
- * The size and number of data blocks are controlled by the blocks and blockSize command-line arguments, with data sourced from /dev/urandom.
+ * Meanwhile, the parent process performs file I/O operations, writing random data to the specified output file.
+ * The size and number of data blocks are controlled by the blocks and blockSize command-line arguments,
+ * with data sourced from /dev/urandom.
  *
- * The program showcases:
- * - Creation and management of child processes using fork.
- * - Custom signal handling setup for SIGUSR1 signals using sigaction.
- * - Periodic IPC using signals to synchronize actions between processes.
- * - Reading from /dev/urandom and writing to a file, handling potential errors.
- * - Use of dynamic memory allocation for buffer management during file I/O operations.
- * - Graceful termination and cleanup, demonstrating error handling and resource management.
  */
 
 #include <stdio.h>

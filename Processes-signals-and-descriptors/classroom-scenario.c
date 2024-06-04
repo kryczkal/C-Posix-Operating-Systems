@@ -5,10 +5,7 @@
  * Each student process represents a student working on the task. If a student encounters an issue (based on their issue probability), it takes additional time to complete the current task part. After finishing each part, the student signals the teacher for approval before proceeding.
  * The teacher process waits for students to signal completion of each part, upon which it sends back approval for the student to continue. This interaction is facilitated through SIGUSR1 and SIGUSR2 signals.
  * 
- * The program uses advanced signal handling to manage communication between the teacher and students. SIGUSR1 is used by students to notify the teacher of task part completion, and SIGUSR2 is used by the teacher to approve continuation.
  * Upon completion of all tasks, each student exits with a status code representing the number of issues they encountered. The teacher collects these exit statuses to determine the total number of issues faced by students.
- * 
- * This program demonstrates process creation and management, signal handling, dynamic memory allocation, and inter-process communication (IPC) in a simulated real-world scenario.
  */
 
 #include <stdio.h>

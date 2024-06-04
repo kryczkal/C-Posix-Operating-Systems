@@ -12,8 +12,7 @@
  * Santa's thread, although included, is not fully implemented and serves as a placeholder for potential 
  * extension, such as managing the sleigh loading and delivering the wrapped gifts. The program utilizes 
  * POSIX semaphores for synchronization, dynamic memory allocation for creating gifts, and pthreads for 
- * concurrent execution of assembly and wrapping processes. Error handling is also incorporated to ensure 
- * the robustness of the toy factory simulation. 
+ * concurrent execution of assembly and wrapping processes.
  */
 
 #include "toy-factory.h"

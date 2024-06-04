@@ -7,9 +7,7 @@
  * The traversal is performed in a physical manner (FTW_PHYS flag), meaning that symbolic links to directories are not followed, to avoid potentially infinite loops in the presence of circular links.
  * 
  * Error handling is done through the ERR macro for critical errors, and a check is included after the nftw call to catch any permissions-related issues during the traversal.
- * 
- * The program demonstrates dynamic memory allocation for creating indented strings and extracting filenames from paths, as well as the use of the nftw function for complex directory traversal tasks.
- * 
+ *
  * Note: The countNode function is set up for demonstration but not actively used in the program's main logic. Instead, the program focuses on visually representing the directory structure and the types of entries within it.
  */
 

@@ -9,7 +9,7 @@
  * - The video_frame structure to represent a video frame with an index and data array.
  * - Functions for manipulating video frames: decode_frame() generates a new frame with random data, transform_frame() modifies frame data, and display_frame() outputs frame information to the console.
  *
- * Additionally, utility functions like random_sleep() are provided to simulate processing delays, demonstrating the application's ability to handle real-time video data processing constraints.
+ * Additionally, utility functions like random_sleep() are provided to simulate processing delays
  */
 
 #define _POSIX_C_SOURCE 200809L

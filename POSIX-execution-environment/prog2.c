@@ -3,7 +3,6 @@
  * It iterates through all the arguments passed to the program, including the program name itself,
  * and prints each argument to the standard output.
  * The purpose of this program is to showcase how command-line arguments can be accessed and utilized within a C program.
- * It returns EXIT_SUCCESS to indicate successful execution.
  */
 
 #include <stdlib.h>

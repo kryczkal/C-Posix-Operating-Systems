@@ -1,5 +1,5 @@
 /*
- * This program demonstrates file copying functionality in C, using system calls for file manipulation. It is designed to copy the content of one file to another.
+ * This program copies the content of one file to another.
  * 
  * The program takes two command-line arguments:
  *   - The source file (srcFile) from which the content will be copied.
@@ -10,10 +10,6 @@
  *   2. It opens the source file for reading and the destination file for writing. If either file cannot be opened, it reports an error and exits. The destination file is created if it does not exist, and if it does, its content is truncated.
  *   3. It copies the content from the source file to the destination file using a buffer. This is done in a loop that reads a chunk of data into the buffer from the source file and then writes that buffer to the destination file, until the end of the source file is reached.
  *   4. It closes both the source and destination files. If an error occurs during closing, it reports an error and exits.
- * 
- * Error handling is performed throughout the program. It uses a custom macro ERR to print an error message and exit if an error occurs at any point during execution.
- * 
- * The program demonstrates the use of low-level I/O system calls such as open, read, write, and close, as well as basic error handling and command-line argument processing in C.
  */
 
 #define _GNU_SOURCE

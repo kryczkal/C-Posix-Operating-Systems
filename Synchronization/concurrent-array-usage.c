@@ -1,21 +1,3 @@
-/* This C program demonstrates the usage of multithreading, mutexes for synchronization,
- * and signal handling in a POSIX-compliant environment. It defines a structure to manage
- * threads and their states (FREE_SLOT, WORKING, STOPPED) and utilizes an array to perform
- * operations concurrently in different threads.
- *
- * The program supports dynamic and non-dynamic mutex initialization based on a preprocessor
- * directive (NON_DYNAMIC_MUTEX). When a signal (SIGUSR1 or SIGUSR2) is received, the program
- * allocates a free thread to either swap elements within an array (arrayJob function) or
- * print the array elements (printJob function), demonstrating thread-safe operations on
- * shared data.
- *
- * It includes mechanisms for error handling, signal blocking to manage asynchronous signals
- * safely, and dynamic thread management based on command-line arguments specifying the array
- * size and the number of threads to use. This program showcases advanced concurrency
- * mechanisms in C using POSIX threads (pthreads), signal handling, mutexes for resource
- * protection, and conditional operation based on compile-time options. */
-
-
 #define _POSIX_C_SOURCE 200809L
 #include <errno.h>
 #include <signal.h>

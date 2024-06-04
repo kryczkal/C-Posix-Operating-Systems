@@ -3,29 +3,7 @@
 //
 
 /*
-This is a client program written in C for inter-process communication using
-FIFOs (named pipes). It reads data from a file and sends it to a FIFO.
-
-The 'read_file_send_to_fifo' function reads data from a file and sends it to a
-FIFO. It first opens the file and the FIFO. Then, it reads data from the file
-into a buffer and writes the buffer to the FIFO. The process PID is added at
-the front of each message. If the read data is less than the message size, the
-remaining part of the message is filled with zeros. The function continues
-reading and sending until there is no more data to read from the file.
-
-The 'main' function is the entry point of the program. It checks the
-command-line arguments and calls 'read_file_send_to_fifo' to read data from a
-file and send it to a FIFO. The program expects two command-line arguments:
-the name of the FIFO file and the name of the file to read data from. If the
-user does not provide these arguments, the program displays the correct usage
-and exits.
-
-The ERR macro is defined to handle errors. It prints the error message, the
-file name, and the line number where the error occurred, then exits the
-program.
-
-The 'usage' function is used to display the correct usage of the program if
-the user provides incorrect arguments.
+This is a client program that reads data from a file and sends it to a FIFO.
 */
 
 #include "client.h"
